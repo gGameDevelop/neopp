@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
+vim.opt.mousemoveevent = true
 vim.diagnostic.config({ virtual_text = false })
 
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }

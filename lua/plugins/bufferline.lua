@@ -3,8 +3,8 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
 		options = {
-			close_command = function()
-				require('bufdelete').bufdelete(0, true)
+			close_command = function(bufnum)
+				require('bufdelete').bufdelete(bufnum, true)
 			end,
 			offsets = {
 				{
@@ -18,7 +18,7 @@ return {
 			diagnostics = "nvim_lsp",
 			hover = {
 				enabled = true,
-				delay = 200,
+				delay = 0,
 				reveal = { 'close' }
 			}
 		},

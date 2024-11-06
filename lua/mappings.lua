@@ -3,6 +3,7 @@ local M = {}
 function M.setup()
 	vim.keymap.set("n", "<leader>r", "<cmd>set relativenumber!<CR>", { desc = "Toggle relative numbers" })
 	vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+	vim.keymap.set("n", "<C-x>", "<cmd>lua require('bufdelete').bufdelete(0, true)<CR>", { desc = "Delete current buffer" })
 
 	vim.keymap.set(
 		"n",

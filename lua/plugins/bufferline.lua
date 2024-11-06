@@ -13,6 +13,11 @@ return {
 				},
 			},
 			diagnostics = "nvim_lsp",
+			hover = {
+				enabled = true,
+				delay = 200,
+				reveal = { 'close' }
+			}
 		},
 		highlights = {
 			buffer_selected = {

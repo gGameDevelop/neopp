@@ -3,8 +3,7 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
 		options = {
-			close_command = function(bufnum)
-				print("Deleting buffer: ", bufnum)
+			close_command = function()
 				require('bufdelete').bufdelete(0, true)
 			end,
 			offsets = {

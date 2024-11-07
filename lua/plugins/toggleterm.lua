@@ -1,3 +1,9 @@
+local function is_nvim_tree_open()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local bufname = vim.api.nvim_buf_get_name(bufnr)
+	return bufname == "NvimTree"
+end
+
 return {
 	"akinsho/toggleterm.nvim",
 	opts = {
@@ -21,5 +27,14 @@ return {
 				background = "Normal",
 			},
 		},
+		on_open = function(term)
+			if is_nvim_tree_open() then
+				-- Adjust size when NvimTree is open
+				vim.cmd("resize 20")
+			else
+				-- Default size for the terminal
+				vim.cmd("resize 30")
+			end
+		end,
 	},
 }

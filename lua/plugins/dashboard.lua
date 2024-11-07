@@ -1,8 +1,8 @@
 return {
 	"nvimdev/dashboard-nvim",
-	--event = "VimEnter",
+	event = "VimEnter",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	--[[opts = {
+	opts = {
 		theme = "doom",
 		config = {
 			header = {
@@ -16,14 +16,6 @@ return {
 				"                                            ",
 				"                                            ",
 				"                                            ",
-				"    █████████████████████",
-				"   █   █   █   █       ",
-				"  █   █   █   ███████  ",
-				" █   █   █         █   ",
-				"███████   █   ███████    ",
-				"                               ",
-				"                               ",
-				"                               ",
 			},
 			center = {
 				{ icon = "  ", desc = "Find File                SPC f f", action = "Telescope find_files" },
@@ -36,5 +28,5 @@ return {
 			},
 			footer = {},
 		},
-	},]]
+	},
 }

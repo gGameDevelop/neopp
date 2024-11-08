@@ -18,6 +18,35 @@ return {
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+			lspkind.init({
+				symbol_map = {
+					Text = "󰉿",
+					Method = "󰆧",
+					Function = "󰊕",
+					Constructor = "",
+					Field = "󰜢",
+					Variable = "󰀫",
+					Class = "󰠱",
+					Interface = "",
+					Module = "",
+					Property = "󰜢",
+					Unit = "󰑭",
+					Value = "󰎠",
+					Enum = "",
+					Keyword = "󰌋",
+					Snippet = "",
+					Color = "󰏘",
+					File = "󰈙",
+					Reference = "󰈇",
+					Folder = "󰉋",
+					EnumMember = "",
+					Constant = "󰏿",
+					Struct = "󰙅",
+					Event = "",
+					Operator = "󰆕",
+					TypeParameter = "",
+				},
+			})
 			cmp.setup({
 				formatting = {
 					format = lspkind.cmp_format({

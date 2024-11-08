@@ -4,9 +4,7 @@ return {
 		dependencies = {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
-		config = function()
-			require("mason").setup()
-		end,
+		opts = {}
 	},
 	{
 		"neovim/nvim-lspconfig",

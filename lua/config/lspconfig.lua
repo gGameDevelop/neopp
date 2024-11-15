@@ -1,13 +1,11 @@
 local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 lspconfig.lua_ls.setup({
 	on_attach = function(client, bufnr)
 		vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
 		vim.keymap.set("n", "<C-h>", vim.lsp.buf.hover)
 	end,
-	capabilities = capabilities,
 	settings = {
 		Lua = {
 			workspace = {
@@ -17,8 +15,17 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
+	capabilities = capabilities,
 })
 lspconfig.clangd.setup({
+	on_attach = function(client, bufnr)
+		vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
+		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
+		vim.keymap.set("n", "<C-h>", vim.lsp.buf.hover)
+	end,
+	capabilities = capabilities,
+})
+lspconfig.pyright.setup({
 	on_attach = function(client, bufnr)
 		vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)

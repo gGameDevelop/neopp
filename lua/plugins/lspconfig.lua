@@ -13,6 +13,7 @@ return {
 				"lua_ls",
 				"clangd",
 				"cmake",
+				"pyright",
 			},
 		},
 	},
@@ -23,7 +24,9 @@ return {
 			"mfussenegger/nvim-dap",
 		},
 		opts = {
-			"codelldb",
+			ensure_installed = {
+				"codelldb",
+			},
 		},
 	},
 	{
@@ -34,8 +37,13 @@ return {
 			"nvimtools/none-ls.nvim",
 		},
 		opts = {
-			"stylua",
-			"cmakelint",
+			ensure_installed = {
+				"stylua",
+				"cmakelint",
+				"black",
+				"isort",
+				"ruff",
+			},
 		},
 	},
 }
